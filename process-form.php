@@ -44,3 +44,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
 	?>
 </div>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $link = $_POST["link"];
+
+  // Create email message
+  $to = "wilfred.leeux9@gmail.com";
+  $subject = "New feedback from " . $name;
+  $message = "Name: " . $name . "\r\n" .
+             "Email: " . $email . "\r\n" .
+             "Link: " . $link;
+
+  // Send email
+  if (mail($to, $subject, $message)) {
+    header("Location: confirmation.php");
+  } else {
+    echo "There was an error sending your feedback. Please try again later.";
+  }
+}
+?>
