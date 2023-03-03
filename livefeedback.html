@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Live Feedback</h1>
+        <?php
+            $feedbacks = file_get_contents('feedbacks.json');
+            $feedbacks = json_decode($feedbacks, true);
+            if (!empty($feedbacks)) {
+                foreach ($feedbacks as $feedback) {
+                    echo '<div class="card">';
+                    echo '<h3>' . $feedback["name"] . '</h3>';
+                    echo '<p><strong>Email:</strong> ' . $feedback["email"] . '</p>';
+                    echo '<p><strong>Link:</strong> <a href="' . $feedback["link"] . '">' . $feedback["link"] . '</a></p>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>No feedback yet.</p>';
+            }
+        ?>
+        <a href="index.html" class="button">Leave Feedback</a>
+    </div>
+</body>
+</html>
