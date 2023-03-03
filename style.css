@@ -1,42 +1,48 @@
 .container {
-	width: 80%;
-	margin: 0 auto;
-	text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
 
 h1 {
-	margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 form {
-	margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 label {
-	display: block;
-	margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-input[type="text"], input[type="email"], input[type="url"] {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 20px;
-	box-sizing: border-box;
-	border: none;
-	border-radius: 5px;
-	background-color: #f2f2f2;
+input, textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-input[type="submit"] {
-	padding: 10px 20px;
-	background-color: #4CAF50;
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+textarea {
+    height: 100px;
 }
 
-input[type="submit"]:hover {
-	background-color: #3e8e41;
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
+button:hover {
+    background-color: #3e8e41;
+}
